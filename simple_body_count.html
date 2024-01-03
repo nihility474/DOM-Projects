@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weight Body Count</title>
+</head>
+<body>
+    <h2> Is your weight ideal? </h2>
+    <label for="">Name</label> <br>
+    <input type="text" id="name"> <br>
+    <label for="">Gender</label> <br>
+    <input type="text" id="sex" placeholder="F/M"> <br>
+    <label for="">Age</label> <br>
+    <input type="number" id="age"> <br>
+    <label for="">Weight</label> <br>
+    <input type="number" id="weight"> <br>
+    <label for="">Height</label> <br>
+    <input type="number" id="height"> <br> <br>
+    <button type="submit" id="submit" onclick="check()">Check now!</button> <br>
+    <p id="result"></p>
+
+    <script>
+        function check() {
+            let n = document.getElementById('name').value;
+            let a = document.getElementById('age').value;
+            let w = document.getElementById('weight').value;
+            let h = document.getElementById('height').value;
+            let s = document.getElementById('sex').value;
+            let w1;
+
+            if (s == "F") {
+                if (a >= 20) {
+                    w1 = h - 110;
+                    if (w1 > 50) {
+                        if (w > w1){
+                            document.getElementById('result').innerHTML = n + ", your weight is ideal!";
+                        } else if (w < w1) {
+                            document.getElementById('result').innerHTML = n + ", your under weight! you're ideal is " + w1;
+                        }
+                        // document.getElementById('result').innerHTML = n + ", your weight is ideal!";
+                    } else {
+                        document.getElementById('result').innerHTML = n + ", your under weight!";
+                    }
+                } else {
+                    w1 = h - 110;
+                    if (w > 40 && w > w1) {
+                        document.getElementById('result').innerHTML = n + ", your weight is ideal!";
+                    } else {
+                        document.getElementById('result').innerHTML = n + ", your under weight!";
+                    }
+                }
+            } 
+            
+            else if (s == "M") {
+                if (a >= 20) {
+                    w1 = h - 110;
+                    if (w1 >= 60 >= w) {
+                        document.getElementById('result').innerHTML = n + ", your weight is ideal!";
+                    } else {
+                        document.getElementById('result').innerHTML = n + ", your under weight!";
+                    }
+                } else {
+                    w1 = h - 110;
+                    if (w1 >= 50 >= w) {
+                        document.getElementById('result').innerHTML = n + ", your weight is ideal!";
+                    } else {
+                        document.getElementById('result').innerHTML = n + ", your under weight!";
+                    }
+                }
+            }
+
+            else {
+                alert("gender not available!")
+            }
+
+        //     if (a >= 20) {
+        //         w = h - 110;
+        //         if (w > 50) {
+        //             document.getElementById('result').innerHTML = n + ", your weight is ideal!"
+        //         } else {
+        //             document.getElementById('result').innerHTML = n + ", your weightless :("
+        //         }
+        //     } else {
+        //         w = h - 110;
+        //         if (w > 40) {
+        //             document.getElementById('result').innerHTML = n + ", your weight id ideal!"
+        //         } else {
+        //             document.getElementById('result').innerHTML = n + ", your weightless :("
+        //         }
+        //     }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+
+    <style>
+        
+        body{
+            background-color: #e0e3eb;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Helvetica;
+            margin-top: 120px;
+            background-color: #2D3250;
+            border-radius: 10px;
+            box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5); 
+            width: 90%;
+            padding-bottom: 5px;
+        }
+        .title{
+            color: #F6B17A;
+        }
+        .btn{
+            margin: 5px;
+        }
+        .btn button{
+            background-color: #F6B17A; 
+            border: none;
+            color: #2D3250;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+        .btn button:active{
+            transform: scale(0.9);
+        }
+        .results{
+            padding: 7px 0px;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+        }
+
+    </style>
+
+</head> 
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Character Counter</h1>
+        </div>
+        <div class="input">
+            <textarea name="text" id="input_user" cols="70" rows="20" placeholder="Input your text here..."></textarea>
+        </div>
+        <div class="btn">
+            <button type="submit" id="check" onclick="count()">Check</button>
+        </div>
+        <div class="results">
+            <p id="result">your results showed here</p>
+        </div>
+        <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque voluptatum repellendus labore magni nulla est tempora saepe consectetur ipsam eos. Tempore consequatur, dolore sunt ex officia maiores quo numquam asperiores? Sapiente aliquam blanditiis, nisi laudantium nesciunt dolores enim ducimus! Cum, itaque. Alias deleniti officiis temporibus. Dolor voluptates ullam, excepturi delectus facere quos dolores distinctio architecto perspiciatis? Voluptates beatae temporibus odio?
+        </p> -->
+    </div>
+
+    <script>
+        function count() {
+            let count_character = document.getElementById('input_user').value;
+            let result = count_character.length;
+            let result_1 = document.getElementById('result');
+            result_1.innerHTML = "Your character is : " + result;
+        }
+    </script>
+</body>
+</html>

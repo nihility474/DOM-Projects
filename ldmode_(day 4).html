@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligt / Dark Mode</title>
+</head>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+  }
+  .Pmode{
+    position: absolute;
+    top: 20%;
+    left: 13%;
+    font-size: 50px;
+    color: #EEF5FF;
+    background-color: #86B6F6;
+    padding: 10rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+    transition: 0.5s ease-in-out;
+  }
+  .btn{
+    position: absolute;
+    top: 82%;
+    left: 50%;
+  }
+  .info{
+    position: absolute;
+    top: 78%;
+    left: 45%;
+  }
+</style>
+
+<body>
+  <p class="Pmode" id="myP">Light Mode.</p>
+  <label for="" class="info">Switch Mode</label>
+  <input type="checkbox" id="switch" class="btn" onclick="switch_mode()">
+
+    <script>
+      function switch_mode() {
+        let textMode = document.getElementById('myP')
+
+        if (document.getElementById('switch').checked) {
+          textMode.textContent = "Dark Mode.";
+          textMode.style.backgroundColor = '#33186B';
+          textMode.style.color = '#F2AFEF';
+        } else {
+          // textMode.textContent = "Light Mode.";
+          // textMode.style.backgroundColor = '#86B6F6';
+          // textMode.style.color = '#EEF5FF';
+          textMode.reset();
+        }
+      }
+    </script>
+</body>
+</html>
